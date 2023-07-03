@@ -7,7 +7,7 @@ function Layout() {
   return (
     <div>
         <Navbar/>
-        <div className='container mx-auto min-h-[85vh] bg-blue-500 p-5'>
+        <div className='container mx-auto min-h-[85vh] bg-blue-200 p-5'>
         <Outlet/>
         </div>
         <Footer/>
