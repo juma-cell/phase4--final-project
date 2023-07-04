@@ -55,7 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_154011) do
     t.string "email"
     t.boolean "admin_priviledge", default: false
     t.string "password_digest"
-    t.string "confirm_password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
