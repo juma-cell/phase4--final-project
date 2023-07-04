@@ -1,0 +1,531 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "discussion forum",
+    "dateExported": "2023-07-04T20:57:27.786Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "eca30ed1-8013-4be9-ac27-1226a98d7fdd",
+            "name": "users",
+            "containerId": "",
+            "created": "2023-07-03T19:50:30.139Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "0dfd7955-b329-4ebc-82d9-247745a97c44",
+            "name": "profile",
+            "containerId": "",
+            "created": "2023-07-04T07:22:58.858Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "18c3c92e-fa63-439b-8a2a-ef019ce502ee",
+            "name": "channel",
+            "containerId": "",
+            "created": "2023-07-04T12:24:24.477Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "8eed2a27-9d94-4edb-83a0-5fe5f5692249",
+            "name": "discussion",
+            "containerId": "",
+            "created": "2023-07-04T15:08:42.538Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "507b7b89-d818-4d82-b095-6c430454fc5a",
+            "name": "reply",
+            "containerId": "",
+            "created": "2023-07-04T15:54:22.578Z",
+            "sortNum": 60000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "291956fc-78a3-417b-a78b-89e2a1b0b05b",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "eca30ed1-8013-4be9-ac27-1226a98d7fdd",
+            "name": "add user",
+            "url": "http://127.0.0.1:3000/users",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-07-03T19:50:47.412Z",
+            "modified": "2023-07-04T20:55:35.058Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "juma"
+                    },
+                    {
+                        "name": "email",
+                        "value": "juma@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "1234567"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "4755c203-906b-42af-9837-0b5602c21dc2",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "eca30ed1-8013-4be9-ac27-1226a98d7fdd",
+            "name": "login",
+            "url": "http://127.0.0.1:3000/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-07-03T20:01:32.942Z",
+            "modified": "2023-07-04T17:03:39.389Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "tom20@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "2030"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "483bb882-8a34-48de-8607-64739ff057b3",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "eca30ed1-8013-4be9-ac27-1226a98d7fdd",
+            "name": "logout",
+            "url": "http://127.0.0.1:3000/logout",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-07-04T06:21:21.710Z",
+            "modified": "2023-07-04T16:36:10.454Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "password",
+                        "value": "",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "a78b2d11-9f2d-4734-b1c3-5bb5c61a081f",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "18c3c92e-fa63-439b-8a2a-ef019ce502ee",
+            "name": "create channel",
+            "url": "http://127.0.0.1:3000/channels",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-07-04T12:24:38.804Z",
+            "modified": "2023-07-04T14:12:55.770Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "channel_name",
+                        "value": "group4"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "51e0abf4-04bd-4629-bb65-2f69e6701341",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "18c3c92e-fa63-439b-8a2a-ef019ce502ee",
+            "name": "get all channels",
+            "url": "http://127.0.0.1:3000/channels",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-07-04T13:06:00.839Z",
+            "modified": "2023-07-04T13:17:47.060Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6f3e7a30-1aa7-4888-ae2e-46af0d1f96ab",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "18c3c92e-fa63-439b-8a2a-ef019ce502ee",
+            "name": "specific channel",
+            "url": "http://127.0.0.1:3000/channels/20",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2023-07-04T13:14:23.524Z",
+            "modified": "2023-07-04T14:13:39.009Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "31d7553d-cbba-4aec-b2a6-537ee43e823a",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "18c3c92e-fa63-439b-8a2a-ef019ce502ee",
+            "name": "update channel",
+            "url": "http://127.0.0.1:3000/channels/20",
+            "method": "PUT",
+            "sortNum": 170000,
+            "created": "2023-07-04T13:15:31.642Z",
+            "modified": "2023-07-04T14:14:52.646Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "channel_name",
+                        "value": "art"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "de440152-ea3d-4b6e-924d-fea01bc371d1",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "18c3c92e-fa63-439b-8a2a-ef019ce502ee",
+            "name": "delete",
+            "url": "http://127.0.0.1:3000/channels/1",
+            "method": "DELETE",
+            "sortNum": 190000,
+            "created": "2023-07-04T13:16:55.965Z",
+            "modified": "2023-07-04T13:17:30.789Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "de2a5aec-3551-4713-8d1e-440f15734772",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "0dfd7955-b329-4ebc-82d9-247745a97c44",
+            "name": "add profile",
+            "url": "http://127.0.0.1:3000/profiles",
+            "method": "POST",
+            "sortNum": 210000,
+            "created": "2023-07-04T14:15:50.251Z",
+            "modified": "2023-07-04T14:59:40.822Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "JohnDoe"
+                    },
+                    {
+                        "name": "email",
+                        "value": "johndoe@example.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "$2a$12$Go0yMzOC4q2HyIFajQnsrufRDBpJwi2.UWY.Xixlh7WdqmLdlMIBe"
+                    },
+                    {
+                        "name": "image",
+                        "value": "image ulr"
+                    },
+                    {
+                        "name": "user_id",
+                        "value": "1"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "41140d9e-207d-4b8a-b905-b203ad4d9146",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "eca30ed1-8013-4be9-ac27-1226a98d7fdd",
+            "name": "get all users",
+            "url": "http://127.0.0.1:3000/users",
+            "method": "GET",
+            "sortNum": 220000,
+            "created": "2023-07-04T14:49:24.758Z",
+            "modified": "2023-07-04T14:49:45.272Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9644b176-fc55-4f3a-9c2a-4872c72b0ab7",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "0dfd7955-b329-4ebc-82d9-247745a97c44",
+            "name": "update profile",
+            "url": "http://127.0.0.1:3000/profiles/1",
+            "method": "PATCH",
+            "sortNum": 225000,
+            "created": "2023-07-04T15:01:20.877Z",
+            "modified": "2023-07-04T15:02:08.361Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "JohnDoe32"
+                    },
+                    {
+                        "name": "email",
+                        "value": "johndoe@example.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "$2a$12$Go0yMzOC4q2HyIFajQnsrufRDBpJwi2.UWY.Xixlh7WdqmLdlMIBe"
+                    },
+                    {
+                        "name": "image",
+                        "value": "image ulr"
+                    },
+                    {
+                        "name": "user_id",
+                        "value": "1"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "8e8615aa-aefe-414c-8814-1f678c0f6cb1",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "0dfd7955-b329-4ebc-82d9-247745a97c44",
+            "name": "get profile",
+            "url": "http://127.0.0.1:3000/profiles/1",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2023-07-04T14:58:13.419Z",
+            "modified": "2023-07-04T14:59:05.434Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "03609afc-20f9-464d-a3f7-c6599dea2c75",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "0dfd7955-b329-4ebc-82d9-247745a97c44",
+            "name": "delete profile",
+            "url": "http://127.0.0.1:3000/profiles/1",
+            "method": "DELETE",
+            "sortNum": 260000,
+            "created": "2023-07-04T15:02:28.859Z",
+            "modified": "2023-07-04T15:04:41.224Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "16393fa5-c72f-4246-91d8-37f1da3b6b84",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "8eed2a27-9d94-4edb-83a0-5fe5f5692249",
+            "name": "add discussion",
+            "url": "http://127.0.0.1:3000/discussions",
+            "method": "POST",
+            "sortNum": 270000,
+            "created": "2023-07-04T15:09:03.562Z",
+            "modified": "2023-07-04T20:52:58.220Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "discussion_title",
+                        "value": "dhdfjhbf"
+                    },
+                    {
+                        "name": "user_id",
+                        "value": "1"
+                    },
+                    {
+                        "name": "channel_id",
+                        "value": "3"
+                    },
+                    {
+                        "name": "content",
+                        "value": "hbdjndks"
+                    },
+                    {
+                        "name": "likes",
+                        "value": "2",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "58c0d53a-f31f-409b-859f-7d274a0e99c9",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "8eed2a27-9d94-4edb-83a0-5fe5f5692249",
+            "name": "update discussion",
+            "url": "http://127.0.0.1:3000/discussions/1",
+            "method": "PATCH",
+            "sortNum": 275000,
+            "created": "2023-07-04T15:28:26.853Z",
+            "modified": "2023-07-04T15:29:32.439Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "discussion_title",
+                        "value": "yeyyeh"
+                    },
+                    {
+                        "name": "content",
+                        "value": "updated discussiongjf"
+                    },
+                    {
+                        "name": "user_id",
+                        "value": "1"
+                    },
+                    {
+                        "name": "channel_id",
+                        "value": "3"
+                    },
+                    {
+                        "name": "likes",
+                        "value": "2"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "13b5a567-eacb-40f7-baae-0e50f55c81b3",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "8eed2a27-9d94-4edb-83a0-5fe5f5692249",
+            "name": "get specific disc",
+            "url": "http://127.0.0.1:3000/discussions/2",
+            "method": "GET",
+            "sortNum": 280000,
+            "created": "2023-07-04T15:26:10.571Z",
+            "modified": "2023-07-04T20:47:15.498Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "56469614-079e-4ef2-804c-ccf19c4cba05",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "8eed2a27-9d94-4edb-83a0-5fe5f5692249",
+            "name": "delete dis",
+            "url": "http://127.0.0.1:3000/discussions/1",
+            "method": "DELETE",
+            "sortNum": 300000,
+            "created": "2023-07-04T15:29:52.555Z",
+            "modified": "2023-07-04T15:30:23.918Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cb15b10f-1f37-4ab6-a296-a2fc7139bc58",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "8eed2a27-9d94-4edb-83a0-5fe5f5692249",
+            "name": "get all discussions",
+            "url": "http://127.0.0.1:3000/discussions",
+            "method": "GET",
+            "sortNum": 310000,
+            "created": "2023-07-04T15:30:56.604Z",
+            "modified": "2023-07-04T15:31:19.086Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c678a7cc-932b-4826-897f-06625a277c9d",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "507b7b89-d818-4d82-b095-6c430454fc5a",
+            "name": "get reply",
+            "url": "http://127.0.0.1:3000/discussions/2/replies",
+            "method": "GET",
+            "sortNum": 320000,
+            "created": "2023-07-04T15:54:57.796Z",
+            "modified": "2023-07-04T16:14:43.586Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5b66772a-eccb-44dd-a997-e4ca812eb069",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "507b7b89-d818-4d82-b095-6c430454fc5a",
+            "name": "add reply",
+            "url": "http://127.0.0.1:3000/discussions/2/replies",
+            "method": "POST",
+            "sortNum": 340000,
+            "created": "2023-07-04T16:15:25.084Z",
+            "modified": "2023-07-04T20:54:17.417Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "reply_content",
+                        "value": "its good"
+                    },
+                    {
+                        "name": "user_id",
+                        "value": "1"
+                    },
+                    {
+                        "name": "discussion_id",
+                        "value": "90",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "f402958d-201c-400b-9ef3-67b9919990da",
+            "colId": "8fee288f-2070-44d0-9512-4e08fbc628f8",
+            "containerId": "eca30ed1-8013-4be9-ac27-1226a98d7fdd",
+            "name": "current user",
+            "url": "http://127.0.0.1:3000/current",
+            "method": "GET",
+            "sortNum": 360000,
+            "created": "2023-07-04T16:32:20.353Z",
+            "modified": "2023-07-04T19:50:16.749Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
