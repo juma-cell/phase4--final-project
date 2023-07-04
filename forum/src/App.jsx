@@ -7,8 +7,12 @@ import Profile from "./pages/Profile"
 import SignUp from "./pages/SignUp"
 import SingleTopic from "./pages/SingleTopic"
 import UpdatePassword from "./pages/UpdatePassword"
+import AddTopic from "./pages/AddTopic"
+import ApprovedTopics from "./pages/ApprovedTopics"
 import "./App.css";
+
 function App() {
+
 
 
   return (
@@ -21,6 +25,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/singletopic" element={<SingleTopic />} />
         <Route path="/updatepassword" element={<UpdatePassword />} />
+        <Route path="/addtopic" element={<AddTopic/>} />
+        <Route path="/approvedtopics" element={<ApprovedTopics/>} />
 
         </Route>
         </Routes>
