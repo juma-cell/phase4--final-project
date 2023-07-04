@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import image3 from "../images/image3.png"
+import { AuthContext } from '../context/AuthContext'
 
 function Login() {
+  const {login} = useContext(AuthContext)
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+
+  const  handleSubmit = (e) =>{
+      e.preventDefault()
+      console.log(email+ "  "+password)
+     
+      login(email, password)
+
+
+  }
+
+
   return (
    
 
@@ -12,32 +29,15 @@ function Login() {
       <h1 class="text-2xl font-bold sm:text-3xl">Welcome Back!</h1>
     </div>
 
-    <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
+    <form onSubmit={handleSubmit} class="mx-auto mb-0 mt-8 max-w-md space-y-4">
       <div>
         <label for="email" class="sr-only">Email</label>
 
         <div class="relative">
-          <input
-            type="email"
-            class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter email"
-          />
+        <input type="text" value={email} onChange={(e)=> setEmail(e.target.value) } className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" placeholder="email" required />
 
           <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-              />
-            </svg>
+            
           </span>
         </div>
       </div>
@@ -46,34 +46,10 @@ function Login() {
         <label for="password" class="sr-only">Password</label>
 
         <div class="relative">
-          <input
-            type="password"
-            class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter password"
-          />
+        <input type="password" value={password} onChange={(e)=> setPassword(e.target.value) } className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" placeholder="password" required />
 
-          <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-          </span>
+
+    
         </div>
       </div>
 

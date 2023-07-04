@@ -31,9 +31,9 @@ class SessionController < ApplicationController
 #   end
 
 
-  def logout
+  def signout
      session.delete :user_id
-     render json: {success: "Logout success"}
+     render json: {success: "signout successfull"}
 
   end
 

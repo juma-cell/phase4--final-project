@@ -6,10 +6,13 @@ import "flowbite"
 import Profile from "./pages/Profile"
 import SignUp from "./pages/SignUp"
 import SingleTopic from "./pages/SingleTopic"
-import UpdatePassword from "./pages/UpdatePassword"
+import SignOut from "./pages/SignOut"
 import AddTopic from "./pages/AddTopic"
 import ApprovedTopics from "./pages/ApprovedTopics"
 import "./App.css";
+import AuthProvider from "./context/AuthContext"
+import DiscussProvider from "./context/DiscussContext"
+
 
 function App() {
 
@@ -17,6 +20,8 @@ function App() {
 
   return (
     <BrowserRouter>
+    <AuthProvider>
+    <DiscussProvider>
         <Routes>
         <Route path="/" element={<Layout/>}>
         <Route index element={<Home />} />
@@ -24,12 +29,14 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/singletopic" element={<SingleTopic />} />
-        <Route path="/updatepassword" element={<UpdatePassword />} />
+        <Route path="/signout" element={<SignOut />} />
         <Route path="/addtopic" element={<AddTopic/>} />
         <Route path="/approvedtopics" element={<ApprovedTopics/>} />
 
         </Route>
         </Routes>
+    </DiscussProvider>
+    </AuthProvider>
     </BrowserRouter>
   )
 }
