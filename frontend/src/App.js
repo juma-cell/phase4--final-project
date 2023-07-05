@@ -13,23 +13,25 @@ import DiscussProvider from "./context/DiscussContext"
 
 export default function App() {
   return (
-    <BrowserRouter>
-    <AuthProvider>
-     <DiscussProvider>
-        <Routes>
-       <Route path="/" element={<Layout/>}>
-         <Route index element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/singlediscuss" element={<SingleDiscuss/>} />
-        <Route path="/addDiscuss" element={<AddDiscuss/>} />
-       <Route path="/approvediscuss" element={<ApproveDiscuss/>} />
+<BrowserRouter>
+<AuthProvider>
+<DiscussProvider>
+<Routes>
+        
+      <Route path="/" element={<Layout/>}>
+      <Route index element={<Home />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/approvediscuss" element={<ApproveDiscuss/>} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/singlediscuss" element={<SingleDiscuss/>} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/addDiscuss" element={<AddDiscuss/>} />
+      </Route>
 
-        </Route>
-         </Routes>
-     </DiscussProvider>
-     </AuthProvider>
-     </BrowserRouter>
+        
+  </Routes>
+</DiscussProvider>
+</AuthProvider>
+</BrowserRouter>
   )
 }

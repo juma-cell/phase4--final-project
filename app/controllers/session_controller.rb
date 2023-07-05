@@ -20,22 +20,16 @@ class SessionController < ApplicationController
   
   def current_user
     user = User.find_by(id: session[:user_id])
-    puts "not found"
-    puts session[:user_id]
+    
     if user
-        render json: user
-
+      render json: user
     else
-        render json: {error: "Not logged in"}, status: :not_found
+      render json: { error: "Not logged in" }, status: :not_found
     end        
-
   end
 
   def logout
-     session.delete :user_id
-     render json: {success: "logout success"}
-
+    session.delete(:user_id)
+    render json: { success: "Logout success" }
   end
-
-
 end

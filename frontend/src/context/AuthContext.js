@@ -19,7 +19,7 @@ export default function AuthProvider({children})
         })
         .then((res)=>res.json())
         .then((response)=>{
-            // console.log(response)
+           
             if (response.error) {
                 Swal.fire(
                     'Error',
@@ -117,6 +117,7 @@ export default function AuthProvider({children})
             .then((response) => {
                 if (response.currentUser) {
                 setCurrentUser(response.currentUser);
+                
                 }
             });
         }, [onChange]);
@@ -124,8 +125,9 @@ export default function AuthProvider({children})
     const contextData ={
         login, 
         signup,
-        signout,
-        current_user
+        current_user,
+        signout
+       
     }
 
   return (
