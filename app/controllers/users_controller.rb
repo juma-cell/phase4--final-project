@@ -16,18 +16,18 @@ class UsersController < ApplicationController
 
 
 
-def current_user
-  if session[:user_id].present?
-    @current_user ||= User.find_by(id: session[:user_id])
-    if @current_user
-      render json: @current_user
+  def current_user
+    user = User.find_by(id: session[:user_id])
+    puts "not found"
+    puts session[:user_id]
+    if user
+        render json: user
+
     else
-      render json: { error: "User not found" }, status: :not_found
-    end
-  else
-    render json: { error: "Not logged in" }, status: :unauthorized
+        render json: {error: "Not logged in"}, status: :not_found
+    end        
+
   end
-end
 
 
 

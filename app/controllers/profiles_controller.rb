@@ -6,8 +6,11 @@ class ProfilesController < ApplicationController
       render json: @profiles
     end
   
-    def show
-      render json: @profile
+    def current_profile
+      
+        @profile = Profile.find_by(user_id: session[:user_id])
+        render json: @profile
+    
     end
   
     def new
