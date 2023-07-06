@@ -20,14 +20,14 @@ export default function AuthProvider({children})
         .then((res)=>res.json())
         .then((response)=>{
            
-            if (response.error) {
+            if (response.success) {
+                nav("/");
                 Swal.fire(
-                    'Error',
-                    response.error,
-                    'error'
+                    'Success',
+                    response.success,
+                    'success'
                 );
             } else if (response.email) {
-                nav("/");
                 Swal.fire(
                     'Success',
                     response.success,
@@ -57,6 +57,7 @@ export default function AuthProvider({children})
         setonChange(!onChange)
 
         if (response.success) {
+            nav("/");
             Swal.fire(
                 'Success',
                 response.success,
@@ -91,7 +92,7 @@ export default function AuthProvider({children})
                     'error'
                 );
             } else if (response.email) {
-                nav("/");
+                nav("/login");
                 Swal.fire(
                     'Success',
                     response.success,

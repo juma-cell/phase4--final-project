@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-  # skip_before_action :authorize, only: [:login]
+  skip_before_action :authorize, only: [:login]
 
   def login
     email = params[:email]
@@ -12,7 +12,7 @@ class SessionController < ApplicationController
       puts "LOGIN"
       puts session[:user_id]
 
-      render json: user
+      render json: { success: "Login Success" }    
     else
       render json: { error: "Wrong username/password" }, status: :unauthorized
     end

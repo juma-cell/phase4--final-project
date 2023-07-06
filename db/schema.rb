@@ -11,21 +11,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_07_04_154011) do
-  create_table "channels", force: :cascade do |t|
-    t.string "channel_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "discussions", force: :cascade do |t|
+    t.string "topic"
     t.string "discussion_title"
     t.text "content"
     t.integer "user_id", null: false
-    t.integer "channel_id", null: false
-    t.integer "likes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["channel_id"], name: "index_discussions_on_channel_id"
     t.index ["user_id"], name: "index_discussions_on_user_id"
   end
 
@@ -59,7 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_154011) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "discussions", "channels"
   add_foreign_key "discussions", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "replies", "discussions"

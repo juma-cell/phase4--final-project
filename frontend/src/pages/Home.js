@@ -6,14 +6,12 @@ function Home() {
     <div className='container mx-auto px-4'>
     <article class="rounded-xl border-2 border-gray-100 bg-white mb-8">
   <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
-    <a href="#" class="block shrink-0">
-     
-    </a>
+
     <div>
       <h3 class="font-medium sm:text-lg ">
-        <a href="#" class="hover:underline">
+        <p>
           What it takes to be A millionaire
-        </a>
+        </p>
       </h3>
       <div class="mt-2 sm:flex sm:items-center sm:gap-2">
         <div class="flex items-center gap-1 text-gray-500">
@@ -40,15 +38,13 @@ function Home() {
 
 <article class="rounded-xl border-2 border-gray-100 bg-white">
   <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
-    <a href="#" class="block shrink-0">
-      
-    </a>
+ 
 
     <div>
       <h3 class="font-medium sm:text-lg">
-        <a href="#" class="hover:underline">
+        <p>
           Who is the greatest football player?
-        </a>
+        </p>
       </h3>
 
 

@@ -9,46 +9,52 @@ export default function DiscussProvider({children})
     const nav = useNavigate()
     const [discuss, setDiscuss] = useState([])
     const [onChange, setonChange] = useState(true)
+   
+    const addDiscuss = (discussion_title, content, topic) => {
+      fetch("/discussions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          discussion_title: discussion_title,
+          topic: topic,
+          content: content,
+        }),
+      })
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response);
+        if (response.error) {
+        
+          Swal.fire(
+              'Error',
+              response.error,
+              'error'
+          );
+      } else if (response.success) {
+          Swal.fire(
+              'Success',
+              response.success,
+              'success'
+          );
+          setonChange(!onChange);
+      } else {
+        nav("/");
 
+          Swal.fire(
+              'Success',
+              response.success,
+              'success'
+          );
+      }
+        });
+    };
+    
+     
 
-     // Approve posts by admins
-     const approveDiscuss = (id) =>{
-        fetch(`/api/discuss/approve/${id}`, {
-            method: "PATCH"
-        })
-        .then((res)=>res.json())
-        .then((response)=>{
-            console.log(response)
-            if(response.error)
-            {
-                Swal.fire(
-                    'Error',
-                    response.error,
-                    'error'
-                  )
-            }
-            else if(response.success)
-            { 
-                nav("/")
-                Swal.fire(
-                    'Success',
-                    response.success,
-                    'success'
-                  )
-                  setonChange(!onChange)
-            }
-            else{
-                Swal.fire(
-                    'Error',
-                    "Something went wrong",
-                    'error'
-                  )
-            }
-
-        })
-    }
+        
+    
     const deleteDiscuss = (id) =>{
-        fetch(`/discuss/${id}`, {
+        fetch(`/discussions/${id}`, {
          method: "DELETE",
                 })
         .then((res)=>res.json())
@@ -85,9 +91,9 @@ export default function DiscussProvider({children})
     }, [onChange])
 
     const contextData ={
-        discuss, 
+         discuss,
         deleteDiscuss,
-        approveDiscuss
+        addDiscuss
     }
 
   return (

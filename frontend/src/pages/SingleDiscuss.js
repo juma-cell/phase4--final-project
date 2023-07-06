@@ -40,7 +40,7 @@ function SingleDiscuss() {
           <h3 className="text-xl font-bold mb-4">Question Title</h3>
           <p className="text-gray-700 mb-4">Question content goes here...</p>
           <div className="flex items-center text-gray-500 text-sm">
-            <span className="mr-4">Posted by <a href="#" className="text-blue-500 font-medium">John</a></span>
+            <span className="mr-4">Posted by <p>John</p></span>
             <span>{upvotes} points</span>
           </div>
           <div className="flex mt-4">

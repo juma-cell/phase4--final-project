@@ -15,8 +15,10 @@ function Navbar() {
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <div className="flex items-center">
       <img src={image2} className="h-8 mr-3" alt="Flowbite Logo" />
-      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Forum</span>
+      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">Forum</span>
   </div>
+
+
   <div className="flex items-center md:order-2">
       <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <img className="w-8 h-8 rounded-full" src={image1} alt=""/>
@@ -32,8 +34,8 @@ function Navbar() {
             <Link to="/singlediscuss" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Single Discuss</Link>
           </li>
           <li>
-              <a onClick={()=>signout()} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">
-                    Sign out</a>         
+              <button onClick={()=>signout()} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">
+                    Sign out</button>         
            </li>
         </ul>
       </div>
