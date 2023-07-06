@@ -24,7 +24,7 @@ function Home() {
                <div className="mt-2 sm:flex sm:items-center sm:gap-2">
                 <div className="flex items-center gap-1 text-gray-500"></div>
                 <span className="hidden sm:block" aria-hidden="true">&middot;</span>
-                <p className="hidden sm:block sm:text-xs sm:text-gray-500"> {discuss.content}</p>
+                <p className="hidden sm:block lg:text-xl sm:text-blue-500"> {discuss.content}</p>
               </div>
               <div className="mt-2 sm:flex sm:items-center sm:gap-2">
                 <div className="flex items-center gap-1 text-gray-500"></div>

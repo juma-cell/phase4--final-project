@@ -6,6 +6,7 @@ import Profile from "./pages/Profile"
 import SignUp from "./pages/SignUp"
 import SingleDiscuss from "./pages/SingleDiscuss"
 import AddDiscuss from "./pages/AddDiscuss"
+import EditDiscuss from "./pages/EditDiscuss"
 import "./App.css";
 import AuthProvider from "./context/AuthContext"
 import DiscussProvider from "./context/DiscussContext"
@@ -23,6 +24,7 @@ export default function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/singlediscuss/:id" element={<SingleDiscuss/>} />
       <Route path="/login" element={<Login />} />
+      <Route path="/editDiscuss/:id" element={<EditDiscuss/>} />
       <Route path="/addDiscuss" element={<AddDiscuss/>} />
       </Route>
 

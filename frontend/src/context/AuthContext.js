@@ -7,7 +7,7 @@ export const  AuthContext = createContext()
 export default function AuthProvider({children}) 
 {
     const nav = useNavigate()
-    const [current_user, setCurrentUser] = useState([])
+    const [current_user, setCurrentUser] = useState()
     const [onChange, setonChange] = useState(true)
    
     const login = (email, password) =>{

@@ -48,6 +48,42 @@ export default function DiscussProvider({children})
       }
         });
     };
+    const addReply = (reply_content, id) => {
+      fetch(`/discussions/${id}/replies`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          reply_content:reply_content
+        }),
+      })
+      .then((res) => res.json())
+      .then((response) => {
+        console.log('hey', response);
+        if (response.error) {
+        
+          Swal.fire(
+              'Error',
+              response.error,
+              'error'
+          );
+      } else if (response.success) {
+          Swal.fire(
+              'Success',
+              response.success,
+              'success'
+          );
+          setonChange(!onChange);
+      } else {
+        nav("/");
+
+          Swal.fire(
+              'Success',
+              response.success,
+              'success'
+          );
+      }
+        });
+    };
    
     
     const deleteDiscuss = (id) =>{
@@ -56,6 +92,7 @@ export default function DiscussProvider({children})
                 })
         .then((res)=>res.json())
         .then((response)=>{
+          console.log('delete', response)
               if(response.success)
               {
                 nav("/")
@@ -86,8 +123,32 @@ export default function DiscussProvider({children})
          .then((res) => res.json())
          .then((response) => {
            setDiscussion(response);
+           console.log(response)
          });
      };
+     const editDiscuss= (discussion_title,content, topic, id) => {
+
+      fetch(`/discussions/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({discussion_title:discussion_title,content:content, topic:topic,  }),
+      })
+        .then((res) => res.json())
+        .then((response) => {
+          console.log('update',response);
+          if (response.error) {
+            Swal.fire("Error", response.error, "error");
+          } else if (response.success) {
+            nav("/addDiscuss");
+            Swal.fire("Success", response.success, "success");
+            setonChange(!onChange);
+          } else {
+            Swal.fire("Error", "Something went wrong", "error");
+          }
+        });
+    };
    
      useEffect(() => {
        fetchDiscussions();
@@ -95,8 +156,9 @@ export default function DiscussProvider({children})
 
     const contextData ={
         discussion,
-        
+        addReply,
         deleteDiscuss,
+        editDiscuss,
         addDiscuss
     }
 
