@@ -10,12 +10,11 @@ Rails.application.routes.draw do
 
   
     post '/users', to: 'users#create'
-
     post "/login", to:"session#login"
-
-   
-
     get '/current', to: 'session#current_user'
-
     delete "/logout", to:"session#logout"
+
+     get '*parts', to: 'react#index'
+
+
 end
