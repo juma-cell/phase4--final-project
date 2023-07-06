@@ -7,7 +7,7 @@ export const  DiscussContext = createContext()
 export default function DiscussProvider({children}) 
 {
     const nav = useNavigate()
-    const [discuss, setDiscuss] = useState([])
+    const [discussion, setDiscussion] = useState([])
     const [onChange, setonChange] = useState(true)
    
     const addDiscuss = (discussion_title, content, topic) => {
@@ -80,18 +80,25 @@ export default function DiscussProvider({children})
 
         })
      }
- 
-    useEffect(()=>{
-        fetch("/discussions")
-        .then((res)=>res.json())
-        .then((response)=>{
-            setDiscuss(response)
-            console.log("Discuss",response)
-        })
-    }, [onChange])
+     //Fetch jobs
+     const fetchDiscussions = () => {
+       fetch('/discussions', {
+         method: 'GET',
+         headers: { 'Content-Type': 'application/json' },
+       })
+         .then((res) => res.json())
+         .then((response) => {
+           setDiscussion(response);
+         });
+     };
+   
+     useEffect(() => {
+       fetchDiscussions();
+     }, [onChange]);
 
     const contextData ={
-         discuss,
+        discussion,
+        
         deleteDiscuss,
         addDiscuss
     }

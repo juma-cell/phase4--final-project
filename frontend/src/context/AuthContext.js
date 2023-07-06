@@ -19,7 +19,7 @@ export default function AuthProvider({children})
         })
         .then((res)=>res.json())
         .then((response)=>{
-           
+          
             if (response.success) {
                 nav("/");
                 Swal.fire(
@@ -66,10 +66,12 @@ export default function AuthProvider({children})
    
         } 
         else {
+            nav("/login");
+
             Swal.fire(
-                'Error',
-                "Something went wrong",
-                'error'
+                'Success',
+                response.success,
+                'success'
             );
         }
         
@@ -116,13 +118,14 @@ export default function AuthProvider({children})
             })
             .then((res) => res.json())
             .then((response) => {
-                if (response.currentUser) {
-                setCurrentUser(response.currentUser);
+                console.log ("current",response)
+            
+                setCurrentUser(response);
                 
-                }
+                
             });
         }, [onChange]);
-
+     
     const contextData ={
         login, 
         signup,

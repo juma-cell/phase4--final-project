@@ -12,7 +12,7 @@ function AddDiscuss() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addDiscuss(discussion_title, content,  topic);
+    addDiscuss(discussion_title, content,  topic, current_user.id);
   };
 
   return (
