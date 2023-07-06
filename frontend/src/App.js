@@ -21,7 +21,7 @@ export default function App() {
       <Route index element={<Home />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/singlediscuss" element={<SingleDiscuss/>} />
+      <Route path="/singlediscuss/:id" element={<SingleDiscuss/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/addDiscuss" element={<AddDiscuss/>} />
       </Route>

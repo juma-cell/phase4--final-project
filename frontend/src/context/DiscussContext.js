@@ -48,10 +48,7 @@ export default function DiscussProvider({children})
       }
         });
     };
-    
-     
-
-        
+   
     
     const deleteDiscuss = (id) =>{
         fetch(`/discussions/${id}`, {
@@ -80,7 +77,7 @@ export default function DiscussProvider({children})
 
         })
      }
-     //Fetch jobs
+     
      const fetchDiscussions = () => {
        fetch('/discussions', {
          method: 'GET',

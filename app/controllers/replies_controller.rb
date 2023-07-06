@@ -1,39 +1,36 @@
 class RepliesController < ApplicationController
-    before_action :set_discussion, only: [:create]
-    # before_action :set_reply, only: [:show, :update, :destroy]
+  skip_before_action :authorize, only: [:index, :show]
 
     def index
         @discussion = Discussion.find(params[:discussion_id])
         replies = @discussion.replies
         render json: replies
-      end
-  
-    #   def create
-    #     @discussion = Discussion.find(params[:discussion_id]) # Retrieve the discussion based on the discussion_id
-    #     @reply = @discussion.replies.build(reply_params)
-      
-    #     if @reply.save
-    #       render json: @reply, status: :created
-    #     else
-    #       render json: @reply.errors, status: :unprocessable_entity
-    #     end
-    #   end
+    end
+
 
     def create
-        @discussion = Discussion.find(params[:discussion_id])
-        @reply = @discussion.replies.build(reply_params)
-      
-        if @reply.save
-          render json: @reply, status: :created
-        else
-          render json: @reply.errors, status: :unprocessable_entity
-        end
+      discussion = Discussion.find(params[:discussion_id])
+      return render json: { error: "Discussion not found" }, status: :not_found unless discussion
+    
+      reply = discussion.replies.new(reply_params)
+      reply.user_id = session[:user_id]
+    
+      if reply.save
+        render json: reply, status: :created
+      else
+        render json: reply.errors, status: :unprocessable_entity
       end
-      
-      
+    end
+    
   
     def show
-      render json: @reply
+      reply = Reply.find_by(id: params[:id])
+
+      if reply
+      render json: reply
+      else
+        render json: { error: "Reply not found"}
+      end
     end
   
     def update
@@ -48,24 +45,25 @@ class RepliesController < ApplicationController
       @reply.destroy
       render json: { message: 'Reply deleted successfully' }
     end
+
+    def destroy
+      reply = Reply.find_by(id: params[:id])
+
+      if reply
+          reply.destroy
+          render json: {success: "reply deleted successfully"}, status: :created
+
+      else
+          render json: {error: "reply does not exist"}, status: :not_found
+      end
+    end
   
+
     private
   
-    def set_discussion
-      @discussion = Discussion.find(params[:discussion_id])
-    end
-  
-    def set_reply
-      @reply = Reply.find(params[:id])
-    end
-  
-    # def reply_params
-    #   params.require(:reply).permit(:reply_content, :user_id) 
-    # end
     def reply_params
-        { reply_content: params[:reply_content], user_id: params[:user_id], discussion_id: params[:discussion_id] }
-      end
+        { reply_content: params[:reply_content] }
+    end
       
-
 
   end

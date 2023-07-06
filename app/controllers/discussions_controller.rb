@@ -3,14 +3,14 @@ class DiscussionsController < ApplicationController
 
   def index
     discussions = Discussion.all
-    render json: discussions
+    render json: discussions, include: :replies
   end
 
   def show
     discussion = Discussion.find_by(id: params[:id])
 
     if discussion
-    render json: discussion
+    render json: discussion, include: :replies
     else
       render json: { error: "Discussion not found"}
     end
