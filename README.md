@@ -31,7 +31,6 @@
         email:juma.musa@student.moringaschool.com phone: +254759769477
 
         **Project Links** 
-        back-end : 
-        front-end :
+         https://forum-2f3k.onrender.com
 
         *License MIT License Copywrite (c) 2023 Kush Muhamad, Edgar Macharia, Juma Musa, and Emily Wairimu
