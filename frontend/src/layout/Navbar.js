@@ -12,7 +12,7 @@ function Navbar() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <div className="flex items-center">
           <img src={image2} className="h-8 mr-3" alt="Flowbite Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">Forum</span>
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Forum</span>
         </div>
 
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
